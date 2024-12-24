@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="zh-CN">
+  <head>
+    <title>Django Page</title>
+
+    <link href={% static "css/bootstrap_3.3.5/bootstrap.min.css" %} rel="stylesheet">
+    <link href={% static "css/bootstrap_3.3.5/bootstrap-theme.min.css" %} rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Custom styles for this template -->
+    <!-- <link href="//v3.bootcss.com/examples/theme/theme.css" rel="stylesheet"> -->
+  </head>
+  <body>
+    <h1>发布会管理</h1>
+    <form method="post" action="/sign/login_action/">
+      <input name="u_name" type="text" placeholder="用户名">
+      <input name="p_word" type="password" placeholder="密码">
+      <button id="btn" type="submit" class="btn btn-success">登录</button><br>
+      {{ error }}<br>
+      {% csrf_token %}
+    </form>
+  </body>
+</html>
